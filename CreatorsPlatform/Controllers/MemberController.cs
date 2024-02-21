@@ -20,6 +20,9 @@ namespace CreatorsPlatform.Controllers
         {
             return View();
         }
+        public ActionResult 送出帳號(){
+            return View("已登入");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
