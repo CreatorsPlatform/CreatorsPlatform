@@ -23,6 +23,9 @@ namespace CreatorsPlatform.Controllers
         public ActionResult 送出帳號(){
             return View("已登入");
         }
+        public bool 檢查有沒有登入(){
+            return false;
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
