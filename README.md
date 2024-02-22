@@ -2,7 +2,7 @@
 
 ## Introduction
 ### TLDR;
->Creators Platform for creators platform
+>Creators Platform for creators
 
 ### Features
 >publish
