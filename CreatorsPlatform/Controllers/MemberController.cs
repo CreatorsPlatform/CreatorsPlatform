@@ -20,8 +20,8 @@ namespace CreatorsPlatform.Controllers
         {
             return View();
         }
-        public ActionResult 送出帳號(){
-            return View("已登入");
+        public ActionResult SendLoginInfo(){
+            return View("UserInfo");
         }
         public bool 檢查有沒有登入(){
             return false;
