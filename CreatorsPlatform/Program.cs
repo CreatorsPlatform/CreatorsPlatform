@@ -8,6 +8,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
     builder.Configuration.GetConnectionString("CSLocalDB")
     ));
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
 
 // builder.Services.AddHttpContextAccessor();
 
@@ -35,6 +36,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 
