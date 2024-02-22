@@ -17,8 +17,20 @@ namespace CreatorsPlatform.Controllers
             _session = contextAccessor.HttpContext.Session;
         }
 
+        // TODO: Verification & Routing Logic / 認證與路由邏輯
+        public ViewResult Index()
+        {
+            //var name = _session.GetString("username");
+            //if (name == "admin")
+            //{
+            //    return View("UserInfo");
+            //}
+            return View("Login");
+        }
+
         public IActionResult Login()
         {
+            
             return View();
         }
 
@@ -27,11 +39,12 @@ namespace CreatorsPlatform.Controllers
             return View();
         }
 
-        public ActionResult SendLoginInfo(){
+        public ActionResult SendLoginInfo()
+        {
             _session.SetString("username", "admin");
             return View("UserInfo");
         }
-        
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
