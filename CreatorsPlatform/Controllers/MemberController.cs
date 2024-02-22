@@ -7,10 +7,14 @@ namespace CreatorsPlatform.Controllers
     public class MemberController : Controller
     {
         private readonly ILogger<MemberController> _logger;
+        private readonly IHttpContextAccessor _contextAccessor;
+        private readonly ISession _session;
 
-        public MemberController(ILogger<MemberController> logger)
+        public MemberController(ILogger<MemberController> logger,
+            IHttpContextAccessor contextAccessor)
         {
             _logger = logger;
+            _session = contextAccessor.HttpContext.Session;
         }
 
         public IActionResult Login()
@@ -24,6 +28,7 @@ namespace CreatorsPlatform.Controllers
         }
 
         public ActionResult SendLoginInfo(){
+            _session.SetString("username", "admin");
             return View("UserInfo");
         }
         
