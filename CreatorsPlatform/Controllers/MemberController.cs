@@ -12,20 +12,21 @@ namespace CreatorsPlatform.Controllers
         {
             _logger = logger;
         }
+
         public IActionResult Login()
         {
             return View();
         }
+
         public IActionResult Signup()
         {
             return View();
         }
+
         public ActionResult SendLoginInfo(){
             return View("UserInfo");
         }
-        public bool 檢查有沒有登入(){
-            return false;
-        }
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
