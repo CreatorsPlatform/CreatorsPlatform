@@ -7,14 +7,10 @@ namespace CreatorsPlatform.Controllers
     public class MemberController : Controller
     {
         private readonly ILogger<MemberController> _logger;
-        private readonly IHttpContextAccessor _contextAccessor;
-        private readonly ISession _session;
 
-        public MemberController(ILogger<MemberController> logger,
-            IHttpContextAccessor contextAccessor)
+        public MemberController(ILogger<MemberController> logger)
         {
             _logger = logger;
-            _session = contextAccessor.HttpContext.Session;
         }
 
         // TODO: Verification & Routing Logic / 認證與路由邏輯
@@ -41,7 +37,6 @@ namespace CreatorsPlatform.Controllers
 
         public ActionResult SendLoginInfo()
         {
-            _session.SetString("username", "admin");
             return View("UserInfo");
         }
 
