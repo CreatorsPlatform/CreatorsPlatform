@@ -1,13 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using CreatorsPlatform.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("ConnectionString")
+    ));
 builder.Services.AddControllersWithViews();
 
 // builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDistributedMemoryCache();
 
-builder.Services.AddSession(options =>{
+builder.Services.AddSession(options =>
+{
     options.IdleTimeout = TimeSpan.FromSeconds(3600);
     options.Cookie.Name = "CPID";
     options.Cookie.Path = "/";
@@ -31,9 +38,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
-app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
