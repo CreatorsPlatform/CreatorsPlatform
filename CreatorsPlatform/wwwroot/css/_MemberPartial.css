@@ -1,0 +1,9 @@
+#switchBtns:hover{
+    transition: 0.5s;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+#entrance{
+    position: fixed;
+}

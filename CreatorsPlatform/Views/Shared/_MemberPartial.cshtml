@@ -1,10 +1,23 @@
-﻿
-
+﻿<link rel="stylesheet" href="~/css/_MemberPartial.css" defer />
+@* 如果已登入顯示會員資訊 *@
 @if (1 == 2)
-{
-    <a>登入</a>
-}
-else
 {
     <p>logged in</p>
 }
+@* 如果還沒登入顯示登入頁面 *@
+else
+{
+    <div id="switchBtns">
+        <a>登入</a>
+        <a>註冊</a>
+    </div>
+    <div id="entrance">
+
+    </div>
+
+    @* <div id="switchPanel">
+
+    </div> *@
+}
+
+<script src="~/js/_MemberPartial.js" defer></script>
