@@ -21,11 +21,11 @@ namespace CreatorsPlatform.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
 
-        
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<User>().Property(user=>user.ID);
-        //    base.OnModelCreating(modelBuilder);
-        //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().Property(user => user.RegisterDate).HasDefaultValueSql("SYSDATETIME()");
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
