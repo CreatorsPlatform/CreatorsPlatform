@@ -1,5 +1,8 @@
 ﻿namespace CreatorsPlatform.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Tag
     {
         public int TagID { get; set; }

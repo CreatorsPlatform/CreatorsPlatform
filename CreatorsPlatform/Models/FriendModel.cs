@@ -1,6 +1,8 @@
 ﻿namespace CreatorsPlatform.Models
 {
-    //stores friend instance
+    /// <summary>
+    /// stores friend instance
+    /// </summary>
     public class Friend
     {
         public int Id { get; set; }

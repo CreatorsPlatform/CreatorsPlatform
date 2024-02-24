@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace CreatorsPlatform.Models
 {
-    // [PrimaryKey(nameof(ID))]
+    /// <summary>
+    /// 
+    /// </summary>
     public class User
     {
         public int ID { get; set; }

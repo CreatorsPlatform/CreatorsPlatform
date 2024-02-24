@@ -1,5 +1,8 @@
 ﻿namespace CreatorsPlatform.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SubscriptionPlan
     {
         public int ID { get; set; }

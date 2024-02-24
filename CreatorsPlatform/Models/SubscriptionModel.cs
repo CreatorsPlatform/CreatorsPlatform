@@ -1,6 +1,8 @@
 ﻿namespace CreatorsPlatform.Models
 {
-    //stores subscription instance / 存放網站運營至今所有建立的訂閱
+    /// <summary>
+    /// stores subscription instance / 存放網站運營至今所有建立的訂閱
+    /// </summary>
     public class Subscription
     {
         public int ID { get; set; }
