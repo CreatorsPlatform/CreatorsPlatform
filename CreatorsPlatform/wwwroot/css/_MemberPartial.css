@@ -1,9 +1,26 @@
-#switchBtns:hover{
+
+#container{
+    position:absolute;
+    right:20%;
+}
+
+#member:hover {
     transition: 0.5s;
     color: white;
     background-color: black;
     border-radius: 5px;
+    cursor: pointer;
 }
-#entrance{
+
+#entrance {
     position: fixed;
+    display: none;
+    background-color: lightblue;
+}
+
+#LoginForm{
+    display:none;
+}
+#RegisterForm{
+    display:none;
 }
