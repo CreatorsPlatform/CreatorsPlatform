@@ -4,7 +4,7 @@ namespace CreatorsPlatform.Controllers
 {
     public class yhuController : Controller
     {
-        public IActionResult Index()
+        public IActionResult PersonalUser()
         {
             return View();
         }
