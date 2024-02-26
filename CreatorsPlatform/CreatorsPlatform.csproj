@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\_MemberPartial.css" />
     <None Include="wwwroot\js\_MemberPartial.js" />
   </ItemGroup>
 
