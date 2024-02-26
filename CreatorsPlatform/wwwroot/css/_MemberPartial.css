@@ -8,7 +8,6 @@
     transition: 0.5s;
     color: white;
     background-color: black;
-    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -18,8 +17,26 @@
     background-color: lightblue;
 }
 
-#LoginForm{
-    display:none;
+#loginBtn{
+    cursor:pointer;
+}
+#RegisterBtn {
+    cursor: pointer;
+}
+#loginBtn:hover {
+    transition: 0.5s;
+    color: white;
+    background-color: black;
+}
+
+#RegisterBtn:hover {
+    transition: 0.5s;
+    color: white;
+    background-color: black;
+}
+
+#LoginForm {
+    display: none;
 }
 #RegisterForm{
     display:none;
