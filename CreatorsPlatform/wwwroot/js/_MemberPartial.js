@@ -17,27 +17,31 @@ class loginform {
 //    });
 //}
 
-$("#member").mouseenter(function () {
-    $("#entrance").slideDown();
+$("#member").mousedown(function () {
+    $("#entrance").fadeIn();
 });
 $("#container").mouseleave(function () {
-    $("#entrance").slideUp();
+    $("#entrance").fadeOut();
 });
 
 
-$("#loginBtn").mouseenter(function () {
-    $("#LoginForm").slideDown();
-    $("#RegisterForm").slideUp();
-});
-$("#container").mouseleave(function () {
-    $("#LoginForm").slideUp();
-});
-
-
-$("#RegisterBtn").mouseenter(function () {
-    $("#RegisterForm").slideDown();
-    $("#LoginForm").slideUp();
+$("#loginBtn").mousedown(async function () {
+    await $("#RegisterForm").fadeOut();
+    await $("#RegisterForm").hide();
+    $("#LoginForm").fadeIn();
+    
 });
 $("#container").mouseleave(function () {
-    $("#RegisterForm").slideUp();
+    $("#LoginForm").fadeOut();
+});
+
+
+$("#RegisterBtn").mousedown(async function () {
+    await $("#LoginForm").fadeOut();
+    await $("#LoginForm").hide();
+    $("#RegisterForm").fadeIn();
+    
+});
+$("#container").mouseleave(function () {
+    $("#RegisterForm").fadeOut();
 });
