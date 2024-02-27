@@ -25,9 +25,9 @@
                 <div class="navbar-collapse navbar-right collapse d-sm-inline-flex justify-content-between ms-4">
                     @* 原本放在導覽部分的網站全名(改去跟商標一起) *@
                     @* <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><h2 class="mb-0">Imagink</h2></a>
-                        </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><h2 class="mb-0">Imagink</h2></a>
+                    </li>
                     </ul> *@
                     <form class="d-flex">
                         <input class="form-control SearchFormInput" type="search" placeholder="搜尋作品/創作者/標籤" aria-label="Search">
@@ -39,7 +39,45 @@
                     </form>
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <partial name="_MemberPartial.cshtml"></partial>
+                            <link rel="stylesheet" href="~/css/_MemberPartial.css" defer />
+                            @* 如果已登入顯示會員資訊 *@
+                            @if (1 == 2)
+                            {
+                                <div id="會員資訊">
+                                    <p>會員資訊</p>
+                                </div>
+                            }
+                            @* 如果還沒登入顯示登入頁面 *@
+                            else
+                            {
+                                <div id="登入登出">
+                                <a asp-controller="Member" asp-action="Login">登入</a>
+                                <a asp-controller="Member" asp-action="Signup">註冊</a>
+                                </div>
+                                @*導覽列註冊登入彈出視窗備案>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>開始*@
+                                @*<div id="container">
+                            <a id="member">會員</a>
+                            <div id="entrance">
+                            <a id="loginBtn">登入</a>
+                            <a id="RegisterBtn">註冊</a>
+                            <form id="LoginForm">
+                            <input type="type" name="Email" value="" placeholder="電子郵件" />
+                            <input type="type" name="Password" value="" placeholder="密碼" />
+                            <a type="" name="name" value="">登入</a>
+                            </form>
+                            <form id="RegisterForm">
+                            <input type="type" name="Email" value="" placeholder="電子郵件" />
+                            <input type="type" name="Password" value="" placeholder="密碼" />
+                            <input type="type" name="Re-Enter-Password" value="" placeholder="確認密碼" />
+                            <a type="" name="name" value="">註冊</a>
+                            </form>
+                            </div>
+                            </div>
+                            *@
+                                @*導覽列註冊登入彈出視窗備案>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>結束*@
+                            }
+
+                            <script src="~/js/_MemberPartial.js" defer></script>
                         </li>
                     </ul>
                 </div>
