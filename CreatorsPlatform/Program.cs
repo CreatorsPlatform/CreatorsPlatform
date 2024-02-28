@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 #region
 //////////依賴注入開始
 
-
+builder.Services.AddHttpContextAccessor();
 // 註冊DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("CSLocalDB")
@@ -21,8 +21,8 @@ builder.Services.AddControllersWithViews();
 // 註冊Session服務
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(3600);
-    options.Cookie.Name = "SID";
+    options.IdleTimeout = TimeSpan.FromSeconds(60);
+    options.Cookie.Name = "DefaultName";
     options.Cookie.Path = "/";
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;

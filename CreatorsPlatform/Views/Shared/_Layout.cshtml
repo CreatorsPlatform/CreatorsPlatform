@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -41,18 +44,21 @@
                         <li class="nav-item">
                             <link rel="stylesheet" href="~/css/_MemberPartial.css" defer />
                             @* 如果已登入顯示會員資訊 *@
-                            @if (1 == 2)
+                            @if (!string.IsNullOrEmpty(Accessor.HttpContext.Session.GetString("UserId")))
                             {
-                                <div id="會員資訊">
-                                    <p>會員資訊</p>
+                                <div id="會員資訊" style="height:100%;">
+                                    <p>您的暱稱: @Accessor.HttpContext.Session.GetString("UserName")</p>
                                 </div>
                             }
                             @* 如果還沒登入顯示登入頁面 *@
                             else
                             {
-                                <div id="登入登出">
-                                <a asp-controller="Member" asp-action="Login">登入</a>
-                                <a asp-controller="Member" asp-action="Signup">註冊</a>
+                                <div id="登入登出" style="height:100%;">
+                                    <form asp-controller="Member" asp-action="Login">
+                                        <input name="UserName" />
+                                        <button type="submit">登入</button>
+                                    </form>
+                                    <a asp-controller="Member" asp-action="Signup">註冊</a>
                                 </div>
                                 @*導覽列註冊登入彈出視窗備案>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>開始*@
                                 @*<div id="container">
