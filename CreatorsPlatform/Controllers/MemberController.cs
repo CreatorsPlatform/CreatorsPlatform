@@ -24,19 +24,16 @@ namespace CreatorsPlatform.Controllers
             return View("Login");
         }
 
-        public IActionResult Login()
-        {
-            
-            return View();
-        }
-
         public IActionResult Signup()
         {
             return View();
         }
 
-        public ActionResult SendLoginInfo()
+        public ActionResult Login(string UserName)
         {
+            HttpContext.Session.SetString("UserId", "12");
+            HttpContext.Session.SetString("UserName", UserName);
+            ViewBag.Login = true;
             return View("UserInfo");
         }
 

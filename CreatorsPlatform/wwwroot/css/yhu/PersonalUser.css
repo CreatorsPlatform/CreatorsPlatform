@@ -1,0 +1,28 @@
+﻿.Main_Open {
+    flex: 0 0 auto;
+    width: 70%;
+    transform-origin: left;
+    transition: 0.5s;
+}
+#Sidebar:hover {
+    flex: 0 0 auto;
+    width: 5%;
+    transform-origin: right;
+    transition: 0.5s;
+}
+.Main_Close {
+    flex: 0 0 auto;
+    width: 73%;
+    transform-origin: left;
+    transition: 0.3s;
+}
+
+#Sidebar {
+    flex: 0 0 auto;
+    width: 2%;
+    transform-origin: right;
+    transition: 0.3s;
+}
+ol {
+    list-style-type: none; 
+}
