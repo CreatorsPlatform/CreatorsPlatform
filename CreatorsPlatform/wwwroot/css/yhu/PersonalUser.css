@@ -4,7 +4,7 @@
     transform-origin: left;
     transition: 0.5s;
 }
-#Sidebar:hover {
+.Sidebar:hover {
     flex: 0 0 auto;
     width: 5%;
     transform-origin: right;
@@ -17,7 +17,7 @@
     transition: 0.3s;
 }
 
-#Sidebar {
+.Sidebar {
     flex: 0 0 auto;
     width: 2%;
     transform-origin: right;
