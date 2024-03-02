@@ -31,9 +31,12 @@ namespace CreatorsPlatform.Controllers
 
         public ActionResult Login(string UserName)
         {
-            HttpContext.Session.SetString("UserId", "12");
-            HttpContext.Session.SetString("UserName", UserName);
-            ViewBag.Login = true;
+            if (!string.IsNullOrEmpty(UserName))
+            {
+                HttpContext.Session.SetString("UserName", UserName);
+                ViewBag.Login = true;
+            }
+
             return View("UserInfo");
         }
 

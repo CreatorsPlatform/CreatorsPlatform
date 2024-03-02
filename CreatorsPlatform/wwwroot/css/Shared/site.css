@@ -2,13 +2,13 @@ html {
     font-size: 14px;
 }
 
-/*³]©whtmlªºa³£¤£­n¦³©³½u*/
+/*è¨­å®šhtmlçš„aéƒ½ä¸è¦æœ‰åº•ç·š*/
 a {
     text-decoration: none;
     color: inherit; 
 }
 
-/*³]©whtmlªºaÂI¹L³£¤£­nÅÜÃC¦â*/
+/*è¨­å®šhtmlçš„aé»ééƒ½ä¸è¦è®Šé¡è‰²*/
 a:visited {
     color: inherit; 
 }
@@ -32,16 +32,16 @@ body {
     margin-bottom: 60px;
 }
 
-/*¾ÉÄı¦C*/
+/*å°è¦½åˆ—*/
 .NavSection{
-    background-color:
+
 }
-/*¥D°Ó¼Ğ¹Ï¤ù*/
+/*ä¸»å•†æ¨™åœ–ç‰‡*/
 #MainIcon {
     width: 200px
 }
 
-/*·j´MÄæ*/
+/*æœå°‹æ¬„*/
 .SearchFormInput {
     border-right: none;
 }
@@ -53,7 +53,7 @@ body {
     box-shadow: 0 0 0 0.1rem rgba(13,110,253,.25)
 }
 
-/*·j´M«ö¶s*/
+/*æœå°‹æŒ‰éˆ•*/
 .SearchFormBtn {
     border-top: 1px solid #ced4da;
     border-bottom: 1px solid #ced4da;
@@ -69,7 +69,7 @@ body {
     color: black;
 }
 
-/*ªÀ¸s´CÅé¹Ï¤ù*/
+/*ç¤¾ç¾¤åª’é«”åœ–ç‰‡*/
 .SocialIcon {
     width: 25px; 
     height: 25px;
