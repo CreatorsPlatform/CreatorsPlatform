@@ -121,6 +121,10 @@ html {
         background: #d6edff;
     }
 
+    /*Footer*/
+.FooterContainer{
+    line-height: 30px;
+}
 /*社群媒體圖片*/
 .SocialIcon {
     width: 25px;

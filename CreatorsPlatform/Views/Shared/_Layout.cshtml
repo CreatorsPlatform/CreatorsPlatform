@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pixtia</title>
+    <title>Imagink</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Shared/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CreatorsPlatform.styles.css" asp-append-version="true" />
@@ -63,7 +63,7 @@
                                 </svg>
                             </a>
                              <ul class="MemberDropdownList">
-                                <li><a class="" href="#">登入 / 註冊</a></li>
+                                <li><a class="p-1" href="#">登入 / 註冊</a></li>
                             </ul>
                             }
 
@@ -118,13 +118,13 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-5">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container py-2 FooterContainer">
             <div class="d-flex">
                 <div class="me-3">
                     &copy; 2024 - CreatorsPlatform - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
