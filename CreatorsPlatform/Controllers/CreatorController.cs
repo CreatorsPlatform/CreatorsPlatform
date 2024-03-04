@@ -8,5 +8,10 @@ namespace CreatorsPlatform.Controllers
         {
             return View();
         }
+
+        public IActionResult Post()
+        {
+            return View();
+        }
     }
 }
