@@ -1,0 +1,24 @@
+﻿
+
+.EventParticipant a {
+    display: flex;
+    align-items: stretch;
+}
+.EventParticipant img {
+    width: 40px; /* 設置圖片的寬度 */
+    height: 40px; /* 設置圖片的高度 */
+    object-fit: cover; /* 保持圖片比例並填滿容器 */
+    border-radius: 50%; /* 將邊框半徑設置為容器寬度的一半，從而裁剪圖片成圓形 */
+}
+
+.EventParticipant p{
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.PostImg {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center top;
+}
