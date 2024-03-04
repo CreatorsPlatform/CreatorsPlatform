@@ -6,14 +6,6 @@ namespace CreatorsPlatform.Controllers
 {
     public class MemberController : Controller
     {
-        private readonly ILogger<MemberController> _logger;
-
-        public MemberController(ILogger<MemberController> logger)
-        {
-            _logger = logger;
-        }
-
-        // TODO: Verification & Routing Logic / 認證與路由邏輯
         public ViewResult Index()
         {
             //var name = _session.GetString("username");
@@ -31,19 +23,7 @@ namespace CreatorsPlatform.Controllers
 
         public ActionResult Login(string UserName)
         {
-            if (!string.IsNullOrEmpty(UserName))
-            {
-                HttpContext.Session.SetString("UserName", UserName);
-                ViewBag.Login = true;
-            }
-
             return View("UserInfo");
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
