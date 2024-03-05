@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using CreatorsPlatform.Data;
+using CreatorsPlatform.Controllers;
 
 //使用Session資料方法:
 //設置Session:HttpContext.Session.SetInt32/SetString/......(名稱, 內容);
@@ -8,7 +9,7 @@ using CreatorsPlatform.Data;
 var builder = WebApplication.CreateBuilder(args);
 #region
 //////////依賴注入開始
-
+builder.Services.AddScoped < MemberDatabase, MemberDatabase > ();
 builder.Services.AddHttpContextAccessor();
 // 註冊DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
