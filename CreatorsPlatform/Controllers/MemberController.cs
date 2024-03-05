@@ -6,24 +6,22 @@ namespace CreatorsPlatform.Controllers
 {
     public class MemberController : Controller
     {
-        public ViewResult Index()
+        public IActionResult Index()
         {
-            //var name = _session.GetString("username");
-            //if (name == "admin")
-            //{
-            //    return View("UserInfo");
-            //}
-            return View("Login");
+            if (2 == 1)
+            {
+                return View("Login");
+            }
+            return View("UserInfo");
         }
-
         public IActionResult Signup()
         {
-            return View();
+            return View("Signup");
         }
 
-        public ActionResult Login(string UserName)
+        public IActionResult Login(string UserName)
         {
-            return View("UserInfo");
+            return View("Login");
         }
     }
 }
