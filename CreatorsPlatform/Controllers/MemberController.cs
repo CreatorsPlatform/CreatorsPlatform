@@ -17,7 +17,7 @@ namespace CreatorsPlatform.Controllers
         private static string 使用者密碼 = "UserPassword";
         private string 用來檢查重複的使用者的SQL指令 = $"SELECT {使用者信箱} FROM Users WHERE EMail = @UserEmail;";
         private string 用來檢查輸入的電子信箱與密碼是否符合存在資料庫的電子信箱與密碼的SQL指令 = $"SELECT {使用者信箱}, {使用者密碼} FROM Users WHERE {使用者信箱} = @A AND {使用者密碼} =@B;";
-        private string 新增User的SQL指令 = $"INSERT INTO Users ({使用者信箱} {使用者密碼}) VALUES (@UserEmail. @Password)";
+        private string 新增User的SQL指令 = $"INSERT INTO Users ({使用者信箱}, {使用者密碼}) VALUES (@UserEmail, @Password)";
         public string 會員資訊SQL指令 = $"SELECT [ID],[UserName],[EMail],[UserPassword],[RegisterDate],[LastLoginDate],[UserAvatar],[BirthdayDate],[PaymentMethod],[UserPoint],[EmailCertification],[CreatorID],[CategoryID] FROM [Users] WHERE [ID] = @ID";
         private SqlConnection sqlConnection = new SqlConnection(CS);
 
@@ -108,6 +108,7 @@ namespace CreatorsPlatform.Controllers
                 command.Connection.Close();
                 return true;
             }
+            command.Connection.Close();
             return false;
         }
         /// <summary>
@@ -120,7 +121,7 @@ namespace CreatorsPlatform.Controllers
             command.Connection.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            adapter.Fill(dt);
+            adapter.Fill(dt); command.Connection.Close();
             return dt;
         }
         /// <summary>
@@ -133,11 +134,12 @@ namespace CreatorsPlatform.Controllers
             command.Connection.Open();
             try
             {
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery(); command.Connection.Close();
                 return true;
             }
             catch
             {
+                command.Connection.Close();
                 return false;
             }
         }
