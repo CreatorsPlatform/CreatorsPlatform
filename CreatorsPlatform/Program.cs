@@ -61,7 +61,7 @@ app.UseAuthorization();
 // 建立名稱default的單一路由
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=HotGuy}/{action=EX2_1}/{id?}"
+    pattern: "{controller=Home}/{action=Index}/{id?}"
     );
 
 app.Run();
