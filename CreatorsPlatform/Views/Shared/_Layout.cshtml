@@ -63,54 +63,9 @@
                                 </svg>
                             </a>
                              <ul class="MemberDropdownList">
-                                <li><a class="p-1" href="#">登入 / 註冊</a></li>
+                                    <li><a asp-action="Login" asp-controller="Member" class="p-1">登入</a><a asp-action="Signup" asp-controller="Member">註冊</a></li>
                             </ul>
                             }
-
-
-
-                            @* <link rel="stylesheet" href="~/css/Shared/_MemberPartial.css" defer /> *@
-                            @* 如果已登入顯示會員資訊 *@
-                            @* @if (!string.IsNullOrEmpty(Accessor.HttpContext.Session.GetString("UserId")))
-                            {
-                            <div id="會員資訊" style="height:100%;">
-                            <p>您的暱稱: @Accessor.HttpContext.Session.GetString("UserName")</p>
-                            </div>
-                            } *@
-                            @* 如果還沒登入顯示登入頁面 *@
-                            @*  else
-                            {
-                            <div id="登入登出" style="height:100%;">
-                            <form asp-controller="Member" asp-action="Login">
-                            <input name="UserName" />
-                            <button type="submit">登入</button>
-                            </form>
-                            <a asp-controller="Member" asp-action="Signup">註冊</a>
-                            </div> *@
-                            @*導覽列註冊登入彈出視窗備案>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>開始*@
-                            @*<div id="container">
-                            <a id="member">會員</a>
-                            <div id="entrance">
-                            <a id="loginBtn">登入</a>
-                            <a id="RegisterBtn">註冊</a>
-                            <form id="LoginForm">
-                            <input type="type" name="Email" value="" placeholder="電子郵件" />
-                            <input type="type" name="Password" value="" placeholder="密碼" />
-                            <a type="" name="name" value="">登入</a>
-                            </form>
-                            <form id="RegisterForm">
-                            <input type="type" name="Email" value="" placeholder="電子郵件" />
-                            <input type="type" name="Password" value="" placeholder="密碼" />
-                            <input type="type" name="Re-Enter-Password" value="" placeholder="確認密碼" />
-                            <a type="" name="name" value="">註冊</a>
-                            </form>
-                            </div>
-                            </div>
-                            *@
-                            @*導覽列註冊登入彈出視窗備案>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>結束*@
-                            @* } *@
-
-                            @* <script src="~/js/Shared/_MemberPartial.js" defer></script> *@
                         </li>
                     </ul>
                 </div>
