@@ -14,6 +14,7 @@
     transition: 0.5s;
     background-color: aqua;
 }
+
 .MainClose {
     flex: 0 0 auto;
     width: 73%;
@@ -29,15 +30,22 @@
     transition: 0.3s;
     background-color: aqua;
 }
+
 ol {
-    list-style-type: none; 
+    list-style-type: none;
 }
+
 #NewMesg {
-    background-color: red !important;
+    background-color: rgb(255, 255, 255);
     z-index: 2;
     position: relative;
 }
-#Toggle {
-    background-color: red !important;
-
+.iconHeig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+}
+.border-right-0 {
+    border-right: 0 !important;
 }

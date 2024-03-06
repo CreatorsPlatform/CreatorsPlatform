@@ -2,21 +2,8 @@
 var CurrentMsg = 0;
 var UserCurrentMsgtype = "newmsg";
 var _UserCurrentMsgtype = "newmsg";
-
-function SidebarOpen() {
-    console.log("11");
-    $("#Main").removeClass().addClass("Main_Open");
-    $("#Sidebar").removeClass().addClass("Sidebar_Open");   
-}
-function SidebarClose() {
-    console.log("00");
-    $("#Main").removeClass().addClass("Main_Close");
-    $("#Sidebar").removeClass().addClass("Sidebar_Close");  
-};
-
 function MessagUpdata(UserCurrentMsgtype){
     CurrentMsg = 0;
-    console.log("ok");
     $("#Messages").empty();
     $.ajax({
         url: '/yhu/PersonalUser',
@@ -62,8 +49,55 @@ function Messagloading(UserCurrentMsgtype, CurrentMsg) {
             }
         }
     });
-    
-} ;
+};
+$("#Sidebar").on("mouseover",
+    function () {
+        $("#Main").removeClass("MainClose").addClass("MainOpen");
+        $("#Sidebar").removeClass("SidebarClose").addClass("SidebarOpen");
+    }
+);
+$("#Sidebar").on("mouseout",
+    function () {
+        $("#Main").removeClass("MainOpen").addClass("MainClose");
+        $("#Sidebar").removeClass("SidebarOpen").addClass("SidebarClose");
+    }
+);
+
+//$("#Sidebar").hover(
+//    function Open() {
+//        $("#Main").removeClass().addClass("MainOpen");
+//        $("#Sidebar").removeClass().addClass("SidebarOpen");
+//    }, function Close() {
+//        $("#Main").removeClass().addClass("MainClose");
+//        $("#Sidebar").removeClass().addClass("SidebarClose");
+//    }
+//);
+$("#NewMesg").on("mouseover",
+    function () {
+        $("#NewMesgIcon").css("fill", "#3498DB");
+    }
+);
+$("#NewMesg").on("mouseout",
+    function () {
+        $("#NewMesgIcon").css("fill", "currentColor");
+    }
+);
+$("#SubscriptionMesg").on("mouseover",
+    function () {
+        $("#SubscriptionMesgIcon").css("fill", "#FADADD");
+    });
+$("#SubscriptionMesg").on("mouseout",
+    function () {
+        $("#SubscriptionMesgIcon").css("fill", "currentColor");
+    });
+$("#Activity").on("mouseover",
+    function () {
+        $("#ActivityIcon").css("fill", "#FFDAB9");
+    });
+$("#Activity").on("mouseout",
+    function () {
+        $("#ActivityIcon").css("fill", "currentColor");
+    });
 
 MessagUpdata(_UserCurrentMsgtype, CurrentMsg);
 

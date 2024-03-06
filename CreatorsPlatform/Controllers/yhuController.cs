@@ -69,9 +69,12 @@ namespace CreatorsPlatform.Controllers
                 case "subscribemsg":
                     updateList = newsListLinq(_CurrentMsg,_CurrentMsg + 10, subscribemsg);
                     break;
-            }
-           
+            }           
             return Json(updateList);
+        }
+        public IActionResult IMAGINK()
+        {
+            return View();
         }
     }
     
