@@ -5,7 +5,7 @@
 }
 
     .EventHeaderImg > img {
-        width:100%;
+        width: 100%;
         object-fit: cover;
         object-position: center -8rem;
     }
@@ -43,18 +43,18 @@
 }
 
 /*一個活動投稿*/
-.EventPost{
+.EventPost {
     height: 20rem;
 }
 
-.EventPostImgPart{
-    height:15rem;
-    overflow:hidden;
+.EventPostImgPart {
+    height: 15rem;
+    overflow: hidden;
 }
 
-.EventPostImgPart img{
-    object-fit: cover;
-}
+    .EventPostImgPart img {
+        object-fit: cover;
+    }
 
 /*對話盒的樣式*/
 .modal-header {
@@ -69,20 +69,36 @@
     display: none;
 }
 /*上傳圖片預覽不要過大*/
-#preview_progressbarTW_img{
-   width: 100%;
+#preview_progressbarTW_img {
+    width: 100%;
 }
 /*不要浮誇focus*/
 #titleTextBox:focus, #EventPostContentTextBox:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.05rem #258cfb;
 }
 /*叉叉按鈕*/
-.CloseBtn:focus {
+.CloseBtn:focus, .CloseBtn:active:focus {
     box-shadow: none
 }
 
+
 #okButton:focus, #cancelButton:focus {
     box-shadow: none
+}
+
+#okButton {
+    font-weight: bold;
+    background-color: #f9db12;
+    transition: background-color 0.1s;
+}
+
+    #okButton:hover {
+        filter: brightness(1.1);
+    }
+
+#cancelButton {
+    font-weight: bold;
+    transition-duration: 0.1s;
 }
 /*右下的投稿按鈕*/
 .QuickPostBtn {
@@ -92,8 +108,15 @@
     width: 50px;
     height: 50px;
     background-color: #f9a21a;
+    border-radius: 25%
 }
 
     .QuickPostBtn:hover {
+        filter: brightness(1.05);
         background-color: #f9a21a;
+    }
+
+    .QuickPostBtn:focus {
+        box-shadow: none;
+        border: none;
     }
