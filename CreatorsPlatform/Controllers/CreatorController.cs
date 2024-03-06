@@ -13,6 +13,7 @@ namespace CreatorsPlatform.Controllers
         // 創作者建立貼文(修改位置待訂)
         public IActionResult CreatePost()
         {
+
             return View();
         }
 
