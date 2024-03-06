@@ -64,6 +64,26 @@
     font-size: 2em;*/
 }
 
+/*沒連結圖片時不要顯示*/
+#preview_progressbarTW_img[src="#"] {
+    display: none;
+}
+/*上傳圖片預覽不要過大*/
+#preview_progressbarTW_img{
+   width: 100%;
+}
+/*不要浮誇focus*/
+#titleTextBox:focus, #EventPostContentTextBox:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.05rem #258cfb;
+}
+/*叉叉按鈕*/
+.CloseBtn:focus {
+    box-shadow: none
+}
+
+#okButton:focus, #cancelButton:focus {
+    box-shadow: none
+}
 /*右下的投稿按鈕*/
 .QuickPostBtn {
     position: fixed;
