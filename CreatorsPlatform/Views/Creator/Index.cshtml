@@ -1,100 +1,181 @@
-﻿<!-- Banner -->
+﻿@{
+    ViewData["Title"] = "Creator Home";
+}
+
+
+<!-- Banner -->
 <div class="text-center" id="banner">
     <img class="img-fluid" src="https://fakeimg.pl/1620x580/" alt="">
 </div>
 <!-- Creator介紹 -->
-<div class="container">
+<div class="container p-3">
     <div class="row">
-        <div class="col-1">
-            <img id="avatar" class="rounded-circle" src="https://fakeimg.pl/100/" alt="">
+        <div class="col-sm-2 col-md-2 col-lg-1">
+            <img class="rounded-circle img-fluid" src="https://fakeimg.pl/100/" alt="">
         </div>
-        <div class="col-11">
+        <div class="col-sm-10 col-md-10 col-lg-11">
             <div class="row">
                 <div class="col">
                     <h4>創作者名稱</h4>
                 </div>
-                <!-- Force next columns to break to new line -->
+                <!-- 強制換行 -->
                 <div class="w-100"></div>
                 <div class="col">
-                    <h6>放外部連結</h6>
+                    <a href="#">
+                        <i class="fs-4 bi bi-twitter-x"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fs-4 bi bi-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fs-4 bi bi-facebook"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- 頁籤 1. 作品 2. 訂閱 3. 委託 -->
-<nav>
-    <div class="container nav nav-tabs">
-        @* <ul> *@
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">個人資料</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">作品</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">訂閱</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">委託</a>
-            </li>
-        @* </ul> *@
-    </div>
-</nav>
-<!-- 內容Container with 3 Cards in 1 row -->
-<div class="card-container container">
-    <div class="card-deck row p-3">
-        <div class="col-4">
-        <div class="card">
-            <img
-            class="card-img-top"
-            src="https://fakeimg.pl/500/"
-            alt="Card image cap"
-            @* style="max-height: 12rem; object-fit: cover" *@
-            />
-            <div class="card-body"
-            @* style="height: 10rem" *@
-            >
-            <h5 class="card-title">作品標題</h5>
-            <p class="card-text">
-                作品簡述
+<!-- 頁籤 0. 個人資料 1. 作品 2. 訂閱 3. 委託 -->
+<ul class="nav nav-tabs" id="creatorTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">個人資料</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="collection-tab" data-bs-toggle="tab" data-bs-target="#collection" type="button" role="tab" aria-controls="collection" aria-selected="false">作品</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="commission-tab" data-bs-toggle="tab" data-bs-target="#commission" type="button" role="tab" aria-controls="commission" aria-selected="false">委託</button>
+    </li>
+</ul>
+<div class="tab-content" id="creatorTabContent">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="p-3">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque sit. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Nisl pretium fusce id velit. Et leo duis ut diam quam nulla. In massa tempor nec feugiat nisl pretium. Augue mauris augue neque gravida in fermentum et. Ante in nibh mauris cursus mattis. Faucibus turpis in eu mi bibendum neque. Sagittis vitae et leo duis ut diam quam nulla. Volutpat odio facilisis mauris sit. Congue quisque egestas diam in arcu cursus euismod quis viverra. Proin fermentum leo vel orci porta non pulvinar. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Sed cras ornare arcu dui vivamus. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Amet nisl purus in mollis nunc. Elementum curabitur vitae nunc sed velit dignissim. Convallis convallis tellus id interdum velit laoreet id donec ultrices.
             </p>
-            </div>
+            <p>
+                Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Commodo nulla facilisi nullam vehicula ipsum a arcu. Porta lorem mollis aliquam ut porttitor. Ac felis donec et odio pellentesque diam volutpat commodo sed. Sapien pellentesque habitant morbi tristique senectus. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Leo in vitae turpis massa sed. Maecenas pharetra convallis posuere morbi leo. Metus aliquam eleifend mi in nulla posuere sollicitudin. Eget aliquet nibh praesent tristique magna sit amet purus. Aliquam faucibus purus in massa tempor. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Et malesuada fames ac turpis. Interdum varius sit amet mattis vulputate enim nulla.
+            </p>
+            <p>
+                Id aliquet risus feugiat in ante metus. Etiam erat velit scelerisque in dictum non consectetur a erat. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Quam id leo in vitae. Quis eleifend quam adipiscing vitae. Volutpat odio facilisis mauris sit amet. Viverra adipiscing at in tellus integer feugiat scelerisque varius morbi. Enim praesent elementum facilisis leo vel fringilla. Interdum varius sit amet mattis vulputate enim nulla aliquet. Imperdiet massa tincidunt nunc pulvinar. Venenatis a condimentum vitae sapien pellentesque habitant morbi. Molestie at elementum eu facilisis sed odio morbi. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Urna molestie at elementum eu facilisis sed odio morbi. Elementum sagittis vitae et leo duis. At auctor urna nunc id cursus. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Odio morbi quis commodo odio aenean sed adipiscing. Lectus sit amet est placerat.
+            </p>
         </div>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top"
-                     src="https://fakeimg.pl/500/"
-                     alt="Card image cap"
-                @* style="max-height: 12rem; object-fit: cover" *@ />
-                <div class="card-body"
-                @* style="height: 10rem" *@>
-                    <h5 class="card-title">作品標題</h5>
-                    <p class="card-text">
-                        作品簡述
-                    </p>
+    </div>
+    <div class="tab-pane fade" id="collection" role="tabpanel" aria-labelledby="collection-tab">
+        <!-- 內容Container with 3 Cards in 1 row -->
+        <div class="card-container container">
+            <div class="card-deck row p-3">
+                <div class="col-4">
+                    <a style="display:block" href="#">
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="https://fakeimg.pl/500/"
+                                 alt="Card image cap"
+                                 @* style="max-height: 12rem; object-fit: cover" *@ />
+                            <div class="card-body"
+                                 @* style="height: 10rem" *@ >
+                                <h5 class="card-title">作品標題</h5>
+                                <p class="card-text">
+                                    作品簡述
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 重複 -->
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="https://fakeimg.pl/500/"
+                             alt="Card image cap"
+                        @* style="max-height: 12rem; object-fit: cover" *@ />
+                        <div class="card-body"
+                        @* style="height: 10rem" *@>
+                            <h5 class="card-title">作品標題</h5>
+                            <p class="card-text">
+                                作品簡述
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="https://fakeimg.pl/500/"
+                             alt="Card image cap"
+                        @* style="max-height: 12rem; object-fit: cover" *@ />
+                        <div class="card-body"
+                        @* style="height: 10rem" *@>
+                            <h5 class="card-title">作品標題</h5>
+                            <p class="card-text">
+                                作品簡述
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top"
-                     src="https://fakeimg.pl/500/"
-                     alt="Card image cap"
-                @* style="max-height: 12rem; object-fit: cover" *@ />
-                <div class="card-body"
-                @* style="height: 10rem" *@>
-                    <h5 class="card-title">作品標題</h5>
-                    <p class="card-text">
-                        作品簡述
-                    </p>
+    </div>
+    <div class="tab-pane fade" id="commission" role="tabpanel" aria-labelledby="commission-tab">
+        <!-- 內容Container with 3 Cards in 1 row -->
+        <div class="card-container container">
+            <div class="card-deck row p-3">
+                <div class="col-4">
+                    <a style="display:block" href="#">
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="https://fakeimg.pl/500/"
+                                 alt="Card image cap"
+                            @* style="max-height: 12rem; object-fit: cover" *@ />
+                            <div class="card-body"
+                            @* style="height: 10rem" *@>
+                                <h5 class="card-title">委託標題</h5>
+                                <p class="card-text">
+                                    委託簡述
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="https://fakeimg.pl/500/"
+                             alt="Card image cap"
+                        @* style="max-height: 12rem; object-fit: cover" *@ />
+                        <div class="card-body"
+                        @* style="height: 10rem" *@>
+                            <h5 class="card-title">委託標題</h5>
+                            <p class="card-text">
+                                委託簡述
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                             src="https://fakeimg.pl/500/"
+                             alt="Card image cap"
+                        @* style="max-height: 12rem; object-fit: cover" *@ />
+                        <div class="card-body"
+                        @* style="height: 10rem" *@>
+                            <h5 class="card-title">委託標題</h5>
+                            <p class="card-text">
+                                委託簡述
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- 0. 個人資料 -->
+
+
 <!-- 內容Container with 4 Cards in 1 row -->
+<!--
 <div class="card-container container">
     <div class="card-deck row p-3">
         <div class="col-3">
@@ -159,3 +240,4 @@
         </div>
     </div>
 </div>
+-->
