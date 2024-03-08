@@ -25,7 +25,10 @@ namespace CreatorsPlatform.Controllers
         {
             _memberDatabase = memberDatabase;
         }
-
+        public IActionResult Individual()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             if (2 == 1)
