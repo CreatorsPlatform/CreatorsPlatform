@@ -36,16 +36,44 @@
             <label for="postTitle" class="form-label">
                 標題<span class="text-danger ml-1"> *</span>
             </label>
-            <input type="text" class="form-control" id="postTitle">
+            <input type="text" class="form-control" placeholder="請輸入標題" id="postTitle">
         </div>
         <div class="form-group">
             <label>內文</label>
             <div id="editor"></div>
         </div>
-        <button class="btn btn-primary" type="submit">發送文章</button>
+        <button id="submitInput" class="mb-3 btn btn-primary" type="button"
+        data-bs-toggle="modal" data-bs-target="#submitModal">發送文章</button>
     </form>
 </div>
 
+<!-- 確認 Modal -->
+<div id="submitModal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">發布文章</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>確認發布文章？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="submit" class="btn btn-primary">確認</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 自訂 js -->
+<script>
+    var submitModal = document.getElementById('submitModal')
+    var submitInput = document.getElementById('submitInput')
+
+    submitModal.addEventListener('shown.bs.modal', function () {
+        submitInput.focus()
+    })
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
 <script src="/js/Shared/Quill.js"></script>
