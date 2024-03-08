@@ -1,6 +1,9 @@
-﻿.container {
-    width: 500px;
-    max-width: 100%;
+﻿.quillcontainer {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .form-group {
@@ -12,7 +15,7 @@ label {
     margin-bottom: 4px;
 }
 
-input {
+/*input {
     border: 1px solid #ccc;
 }
 
@@ -20,8 +23,9 @@ input,
 .ql-editor {
     padding: 4px;
     font-size: 14px;
-}
+}*/
 
 #editor {
-    height: 130px;
+    /*height: 130px;*/
+    height: 500px;
 }

@@ -2,24 +2,47 @@
 <link rel="stylesheet" href="/css/Shared/Quill.css" />
 
 
-<h1>Add - Post</h1>
+<h1>發布文章</h1>
 
-<div class="container">
+<div class="quillcontainer">
     <form action="https://httpbin.org/post" method="post">
         <div class="form-group">
-            <label for="postTitle">標題</label>
-            <input id="postTitle" name="postTitle" type="text">
+            <div class="row">
+                <div class="col">
+                    <label class="font-weight-bold">
+                        類別<span class="text-danger ml-1"> *</span>
+                    </label>
+                    <select class="form-select" aria-label="category">
+                        <option selected>請選擇類別</option>
+                        <option value="1">繪圖</option>
+                        <option value="2">影片</option>
+                        <option value="3">文字</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="font-weight-bold">
+                        子類別<span class="text-danger ml-1"> *</span>
+                    </label>
+                    <select class="form-select" aria-label="category">
+                        <option selected>請選擇子類別</option>
+                        <option value="4">插畫</option>
+                        <option value="5">塗鴉</option>
+                        <option value="6">背景</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="postTitle" class="form-label">
+                標題<span class="text-danger ml-1"> *</span>
+            </label>
+            <input type="text" class="form-control" id="postTitle">
         </div>
         <div class="form-group">
             <label>內文</label>
             <div id="editor"></div>
         </div>
-        <div class="form-group">
-            <label>內文2</label>
-            <div id="editor"></div>
-        </div>
-        <button type="submit">發送文章</button>
-        <button type="button" id="resetForm">清除表單</button>
+        <button class="btn btn-primary" type="submit">發送文章</button>
     </form>
 </div>
 

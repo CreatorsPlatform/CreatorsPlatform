@@ -1,8 +1,7 @@
 ﻿const initialData = {
-    postTitle: '',
-    // `about` is a Delta object
+    // `content` is a Delta object
     // Learn more at: https://quilljs.com/docs/delta
-    about: [
+    content: [
         {
             insert:
                 '',
@@ -11,6 +10,8 @@
 };
 
 const toolbarOptions = [
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],          // custom dropdown
+
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     ['blockquote', 'code-block'],
     ['link', 'image', 'video', 'formula'],
@@ -18,8 +19,6 @@ const toolbarOptions = [
     [{ 'header': 1 }, { 'header': 2 }],               // custom button values
     [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
     [{ 'indent': '-1' }, { 'indent': '+1' }],          // outdent/indent
-    
-    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],          // custom dropdown
 
     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
     [{ 'align': [] }],
@@ -37,7 +36,7 @@ const quill = new Quill('#editor', {
 
 const resetForm = () => {
     document.querySelector('[name="postTitle"]').value = initialData.postTitle;
-    quill.setContents(initialData.about);
+    quill.setContents(initialData.content);
 };
 
 resetForm();
@@ -45,7 +44,7 @@ resetForm();
 const form = document.querySelector('form');
 form.addEventListener('formdata', (event) => {
     // Append Quill content before submitting
-    event.formData.append('about', JSON.stringify(quill.getContents().ops));
+    event.formData.append('content', JSON.stringify(quill.getContents().ops));
 });
 
 document.querySelector('#resetForm').addEventListener('click', () => {
