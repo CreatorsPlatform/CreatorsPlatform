@@ -1,19 +1,53 @@
-﻿//const container = document.getElementsByClassName('richTextEditor');
-//const container = document.getElementsByClassName('richTextEditor');
-//console.log(container);
-const quill1 = new Quill('#editor1', {
+﻿const initialData = {
+    postTitle: '',
+    // `about` is a Delta object
+    // Learn more at: https://quilljs.com/docs/delta
+    about: [
+        {
+            insert:
+                '',
+        },
+    ],
+};
+
+const toolbarOptions = [
+    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    ['blockquote', 'code-block'],
+    ['link', 'image', 'video', 'formula'],
+
+    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
+    [{ 'indent': '-1' }, { 'indent': '+1' }],          // outdent/indent
+    
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],          // custom dropdown
+
+    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+    [{ 'align': [] }],
+
+    ['clean']                                         // remove formatting button
+];
+
+
+const quill = new Quill('#editor', {
     modules: {
-        syntax: true,
-        toolbar: '#toolbar-container',
+        toolbar: toolbarOptions
     },
-    placeholder: '請輸入文字',
     theme: 'snow',
 });
-const quill2 = new Quill('#editor2', {
-    modules: {
-        syntax: true,
-        toolbar: '#toolbar-container',
-    },
-    placeholder: '請輸入文字',
-    theme: 'snow',
+
+const resetForm = () => {
+    document.querySelector('[name="postTitle"]').value = initialData.postTitle;
+    quill.setContents(initialData.about);
+};
+
+resetForm();
+
+const form = document.querySelector('form');
+form.addEventListener('formdata', (event) => {
+    // Append Quill content before submitting
+    event.formData.append('about', JSON.stringify(quill.getContents().ops));
+});
+
+document.querySelector('#resetForm').addEventListener('click', () => {
+    resetForm();
 });
