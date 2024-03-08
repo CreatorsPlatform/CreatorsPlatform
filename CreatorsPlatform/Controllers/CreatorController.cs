@@ -11,20 +11,20 @@ namespace CreatorsPlatform.Controllers
         }
 
         // 創作者建立貼文(修改位置待訂)
-        public IActionResult CreatePost()
+        public IActionResult AddPost()
         {
 
             return View();
         }
 
         // 創作者建立接受委託表單(修改位置待訂)
-        public IActionResult CreateCommisionForm()
+        public IActionResult AddCommisionForm()
         {
             return View();
         }
 
         // 創作者建立訂閱方案(修改位置待訂)
-        public IActionResult CreateSubcriptionPlans()
+        public IActionResult EditSubcriptionPlans()
         {
             return View();
         }
