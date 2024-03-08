@@ -23,7 +23,7 @@ namespace CreatorsPlatform.Controllers
             return View();
         }
 
-        // 創作者建立訂閱方案(修改位置待訂)
+        // 創作者編輯訂閱方案
         public IActionResult EditSubcriptionPlans()
         {
             return View();
