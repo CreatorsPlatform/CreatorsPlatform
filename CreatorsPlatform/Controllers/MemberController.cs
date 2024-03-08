@@ -92,6 +92,36 @@ namespace CreatorsPlatform.Controllers
             }
             return RedirectToAction("Index");
         }
+        [HttpPut]
+        public void 更新暱稱(int UserId, string UserName)
+        {
+            return;
+        }
+        [HttpPut]
+        public void 輸入密碼確認身分(int UserId, string Password)
+        {
+            return;
+        }
+        [HttpPut]
+        public void 更新密碼(int UserId, string Password)
+        {
+
+        }
+        [HttpPut]
+        public void 更新電子信箱(int UserId, string Email)
+        {
+
+        }
+        [HttpPost]
+        public void 信箱驗證(int UserId)
+        {
+
+        }
+        [HttpPut]
+        public void 批量會員資訊更新(int UserId)
+        {
+
+        }
     }
     public class MemberDatabase
     {
