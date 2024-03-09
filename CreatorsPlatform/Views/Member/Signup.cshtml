@@ -1,9 +1,9 @@
-﻿<style>
+﻿
+<style>
     label{
         color:red;
     }
 </style>
-
 
 <section class="">
     <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
@@ -60,20 +60,6 @@
     </div>
 </section>
 
-
-<!--此為原案
-    <div id="SignupPageWrapper" style="display: flex;flex-wrap: wrap;flex-direction: row;position: absolute;">
-    <div style="display: block;position: absolute;background-color: blue;left: 0;right: 80%;top: 0;bottom: 0;"></div>
-    <div style="display: block;position: relative;left: 20%;right: 0;background: azure;">
-        <form asp-action="Signup" asp-controller="Member">
-            <span>電子信箱<input type="email" name="Email" value="" /></span>
-            <span>密碼<input type="password" name="Password" value="" /></span>
-            <span>確認密碼<input type="password" name="RePassword" value="" /></span>
-            <button type="submit">註冊</button>
-        </form>
-    </div>
-</div>-->
-
 <script>
     window.onload = () => {
         $().ready(function () {
@@ -82,7 +68,7 @@
                     alert("提交事件!");
                     form.submit();
                 },
-                debug: true,
+                //debug: true,
                 rules: {
                     Email: {
                         required: true,
@@ -116,5 +102,4 @@
             })
         });
     }
-
 </script>
