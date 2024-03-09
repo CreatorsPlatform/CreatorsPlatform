@@ -47,6 +47,7 @@ namespace CreatorsPlatform.Controllers
         [HttpGet]
         public IActionResult Login(string UserName)
         {
+            return View("頁面正在跳轉");
             return View("Login");
         }
 
@@ -93,7 +94,7 @@ namespace CreatorsPlatform.Controllers
                 HttpContext.Session.SetString("Id", Email);
                 return RedirectToRoute("default");
             }
-            return RedirectToAction("Index");
+            return RedirectToPage("~/Views/Shared/頁面正在跳轉.cshtml");
         }
         [HttpPut]
         public void 更新暱稱(int UserId, string UserName)

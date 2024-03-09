@@ -20,15 +20,15 @@ namespace CreatorsPlatform.Models
         public string PaymentMethod { get; set; }
         public int CreatorID { get; set; }
         public int CategoryID { get; set; }
-        public int UserPoint {  get; set; }
-        public bool EmailVerification {  get; set; }
+        public int UserPoint { get; set; }
+        public bool EmailVerification { get; set; }
         public bool PhoneVerification { get; set; }
         public List<Content> contents { get; set; }
-        Content content {  get; set; }
+        Content content { get; set; }
 
         //[NotMapped]
         //public IList<User> OneUserLoaded { get; set; }
-        
+
         // Relationships / 關係
     }
 }
