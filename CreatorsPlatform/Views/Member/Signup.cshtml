@@ -1,9 +1,15 @@
-﻿<!-- Section: Design Block -->
+﻿<style>
+    label{
+        color:red;
+    }
+</style>
+
+
 <section class="">
-    <!-- Jumbotron -->
     <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
         <div class="container">
             <div class="row gx-lg-5 align-items-center">
+                <!--註冊步驟區塊-->
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h3 class="my-5 display-4 fw-bold ls-tight">
                         註冊步驟一:填寫個人資訊...未完成...<br />
@@ -13,71 +19,38 @@
                     </h3>
 
                 </div>
-
+                <!--註冊資訊填寫區塊-->
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
-                            <form>
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <input type="text" id="form3Example1" class="form-control" />
-                                            <label class="form-label" for="form3Example1">First name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <input type="text" id="form3Example2" class="form-control" />
-                                            <label class="form-label" for="form3Example2">Last name</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Email input -->
+                            <form id="SignupForm" method="post" action="Member/Signup">
                                 <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" />
-                                    <label class="form-label" for="form3Example3">Email address</label>
+                                    <p>電子信箱</p>
+                                    <input type="email" id="Email" class="form-control" name="Email" />
+                                    <label class="form-label" for="Email"></label>
                                 </div>
-
-                                <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" />
-                                    <label class="form-label" for="form3Example4">Password</label>
+                                    <p>密碼</p>
+                                    <input type="password" id="Password" class="form-control" name="Password" />
+                                    <label class="form-label" for="Password"></label>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <p>確認密碼</p>
+                                    <input type="password" id="RePassword" class="form-control" name="RePassword" />
+                                    <label class="form-label" for="RePassword"></label>
                                 </div>
 
-                                <!-- Checkbox -->
+                                <!-- Checkbox
                                 <div class="form-check d-flex justify-content-center mb-4">
                                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                                     <label class="form-check-label" for="form2Example33">
                                         Subscribe to our newsletter
                                     </label>
-                                </div>
+                                </div> -->
 
-                                <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-block mb-4">
                                     Sign up
                                 </button>
-
-                                <!-- Register buttons -->
-                                <div class="text-center">
-                                    <p>or sign up with:</p>
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-google"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-floating mx-1">
-                                        <i class="fab fa-github"></i>
-                                    </button>
-                                </div>
                             </form>
                         </div>
                     </div>
@@ -85,11 +58,11 @@
             </div>
         </div>
     </div>
-    <!-- Jumbotron -->
 </section>
-<!-- Section: Design Block -->
 
-<!--<div id="SignupPageWrapper" style="display: flex;flex-wrap: wrap;flex-direction: row;position: absolute;">
+
+<!--此為原案
+    <div id="SignupPageWrapper" style="display: flex;flex-wrap: wrap;flex-direction: row;position: absolute;">
     <div style="display: block;position: absolute;background-color: blue;left: 0;right: 80%;top: 0;bottom: 0;"></div>
     <div style="display: block;position: relative;left: 20%;right: 0;background: azure;">
         <form asp-action="Signup" asp-controller="Member">
@@ -99,5 +72,49 @@
             <button type="submit">註冊</button>
         </form>
     </div>
-
 </div>-->
+
+<script>
+    window.onload = () => {
+        $().ready(function () {
+            $("#SignupForm").validate({
+                submitHandler: function (form) {
+                    alert("提交事件!");
+                    form.submit();
+                },
+                debug: true,
+                rules: {
+                    Email: {
+                        required: true,
+                        email: true
+                    },
+                    Password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    RePassword: {
+                        required: true,
+                        minlength: 8,
+                        equalTo: "#Password"
+                    },
+                },
+                messages: {
+                    Email: {
+                        required: "請輸入合法電子信箱",
+                        email: "請輸入合法電子信箱",
+                    },
+                    Password: {
+                        required: "請輸入密碼",
+                        minlength: "密碼長度不能小於8個字母"
+                    },
+                    RePassword: {
+                        required: "請輸入密碼",
+                        minlength: "密碼長度不能小於8個字母",
+                        equalTo: "兩次密碼輸入不一致"
+                    },
+                }
+            })
+        });
+    }
+
+</script>
