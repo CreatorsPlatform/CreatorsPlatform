@@ -23,6 +23,8 @@ namespace CreatorsPlatform.Models
         public int UserPoint {  get; set; }
         public bool EmailVerification {  get; set; }
         public bool PhoneVerification { get; set; }
+        public List<Content> contents { get; set; }
+        Content content {  get; set; }
 
         //[NotMapped]
         //public IList<User> OneUserLoaded { get; set; }

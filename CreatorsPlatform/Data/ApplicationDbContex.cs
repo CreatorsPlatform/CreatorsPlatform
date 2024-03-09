@@ -4,11 +4,12 @@ using CreatorsPlatform.Models;
 
 namespace CreatorsPlatform.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ImaginkDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        private readonly string ConnectionString;
+        public ImaginkDbContext(DbContextOptions<ImaginkDbContext> options, IConfiguration configuration) : base(options)
         {
-
+            ConnectionString = configuration.GetConnectionString("ConnectionString");
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Commission> Commissions { get; set; }
@@ -20,12 +21,10 @@ namespace CreatorsPlatform.Data
         public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
-
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            modelBuilder.Entity<User>().Property(user => user.RegisterDate).HasDefaultValueSql("SYSDATETIME()");
-            base.OnModelCreating(modelBuilder);
+            optionsBuilder.UseSqlServer(ConnectionString);
         }
     }
+
 }

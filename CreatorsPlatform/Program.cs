@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped < MemberDatabase, MemberDatabase > ();
 builder.Services.AddHttpContextAccessor();
 // 註冊DbContext
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+builder.Services.AddDbContext<ImaginkDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("CSLocalDB")
     ));
 
