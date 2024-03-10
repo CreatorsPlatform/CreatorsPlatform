@@ -37,24 +37,27 @@ window.onload = () => {
                 ctx.drawImage(image, x, y, xlen, ylen);
             }
         });
+        canvas.addEventListener('mouseleave', () => {
+            document.body.style.overflow = "auto";
+        });
         canvas.addEventListener('wheel', (e) => {
-            canvas.addEventListener('wheel', (e) => {
-                console.log(x, y, xlen, ylen)
-                dy = e.deltaY;
-                var prexlen = xlen;
-                var preylen = ylen;
-                xlen -= 0.1 * dy;
-                ylen -= 0.1 * dy;
-                if (xlen < 128 || ylen < 128) {
-                    xlen = 128;
-                    ylen = 128;
-                    return;
-                }
-                // pixels that overflow = -x + x + xlen - 128
-                x += (xlen - prexlen) * x / (xlen - 128);
-                y += (ylen - preylen) * y / (ylen - 128);
-                ctx.drawImage(image, x, y, xlen, ylen);
-            });
+            document.body.style.overflow = "hidden";
+            console.log(x, y, xlen, ylen)
+            dy = e.deltaY;
+            var prexlen = xlen;
+            var preylen = ylen;
+            xlen -=  dy;
+            ylen -=  dy;
+            var xpos = getMousePos(canvas, e).x;
+            var ypos = getMousePos(canvas, e).y;
+            if (xlen < 128 || ylen < 128) {
+                xlen = 128;
+                ylen = 128;
+                return;
+            }
+            x = xpos - (xpos - x) * xlen / prexlen;
+            y = ypos - (ypos - y) * ylen / preylen;
+            ctx.drawImage(image, x, y, xlen, ylen);
         });
     }
 }
