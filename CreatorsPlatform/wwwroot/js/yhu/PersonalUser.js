@@ -2,6 +2,8 @@
 var CurrentMsg = 0;
 var UserCurrentMsgtype = "newmsg";
 var _UserCurrentMsgtype = "newmsg";
+var IconRecordOld = "NewMesg";
+
 function MessagUpdata(UserCurrentMsgtype){
     CurrentMsg = 0;
     $("#Messages").empty();
@@ -12,7 +14,6 @@ function MessagUpdata(UserCurrentMsgtype){
             _CurrentMsg: CurrentMsg,
             tapy:UserCurrentMsgtype,
         }, success: function (response) {
-            console.log(response);
             for (i = CurrentMsg; i < response.length; i++) {
                 let MsgHtml =
                     `<li>
@@ -98,7 +99,34 @@ $("#Activity").on("mouseout",
     function () {
         $("#ActivityIcon").css("fill", "currentColor");
     });
+function UserIconColor(ToggleIcon) {
+    let Color;
+    $("#" + IconRecordOld).removeClass("border-right-0");
+    $("#" + ToggleIcon).addClass("border-right-0");
+    switch (ToggleIcon) {
+        case "NewMesg":
+            Color = "#3498DB";
+            break;
+        case "SubscriptionMesg":
+            Color = "#FADADD";
+            break;
+        case "Activity":
+            Color = "#FFDAB9";
+            break;
+    }
 
+
+    $("#" + IconRecordOld + "Icon").css("fill", "currentColor");
+    $("#" + ToggleIcon + "Icon").css("fill", Color);
+
+    IconRecordOld = ToggleIcon;
+};
+
+    //
+    // IconFill(ToggleIcon) {
+   
+    //});
+/*};*/
 MessagUpdata(_UserCurrentMsgtype, CurrentMsg);
 
 //$("#Main").css({
