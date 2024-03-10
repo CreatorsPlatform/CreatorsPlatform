@@ -1,2 +1,14 @@
-﻿body {
+﻿#Individual {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-content {
+    position: relative !important;
+    right: -5rem !important;
+    width: 75% !important;
+}
+
+:root {
+    scrollbar-width: none;
 }
