@@ -5,7 +5,7 @@ window.onload = () => {
     var canvas = document.getElementById('Preview');
     var ctx = canvas.getContext('2d');
     document.querySelector('#changeAvatarBtn').addEventListener('click', () => {
-        var avatar = document.getElementById('Preview').toDataURL('image/png').replace('image/png', 'image/octet-stream');
+        var avatar = document.getElementById('Preview').toDataURL('image/png').replace('image/png', 'image/png');
         document.getElementById('Avatar').src = avatar;
     })
     document.querySelector('#ChooseImage').addEventListener('change', () => {
