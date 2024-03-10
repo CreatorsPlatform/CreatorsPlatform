@@ -31,7 +31,9 @@ window.onload = () => {
         });
         canvas.addEventListener('mousemove', ({ movementX, movementY }) => {
             if (isDragging) {
-                console.log(x, y, xlen, ylen);
+                if (x + movementX > 0 || y + movementY > 0 || x + xlen + movementX < 256 || y + ylen + movementY < 256) {
+                    return;
+                }
                 x += movementX;
                 y += movementY;
                 ctx.drawImage(image, x, y, xlen, ylen);
@@ -50,9 +52,12 @@ window.onload = () => {
             ylen -=  dy;
             var xpos = getMousePos(canvas, e).x;
             var ypos = getMousePos(canvas, e).y;
-            if (xlen < 128 || ylen < 128) {
-                xlen = 128;
-                ylen = 128;
+            if (xlen < 256 || ylen < 256) {
+                xlen = 256;
+                ylen = 256;
+                return;
+            }
+            if (xpos - (xpos - x) * xlen / prexlen > 0 || ypos - (ypos - y) * ylen / preylen > 0 || xpos - (xpos - x) * xlen / prexlen + xlen < 256 || ypos - (ypos - y) * ylen / preylen + ylen < 256) {
                 return;
             }
             x = xpos - (xpos - x) * xlen / prexlen;
