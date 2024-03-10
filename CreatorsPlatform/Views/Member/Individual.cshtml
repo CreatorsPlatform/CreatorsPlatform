@@ -43,25 +43,25 @@
                         <canvas id="Preview" width="256" height="256"></canvas>
                         <img id="Avatar">
                     </div>
-                    <input type="file" id="ChooseImage" class="form-control mt-1">
-                    <input type="password" class="form-control mt-1" placeholder="輸入密碼">
-                    <button id="changeAvatarBtn" class="btn btn-info" type="">更改頭像</button>
+                    <input type="file" id="ChooseImage" class="form-control-sm mt-1">
+                    <input type="password" class="form-control-sm mt-1" placeholder="輸入密碼">
+                    <button id="changeAvatarBtn" class="btn btn-primary" type="">更改頭像</button>
                 </div>
             </div>
             <form>
                 <div class="form-group">
                     <label class="d-block">更改信箱</label>
-                    <input type="text" class="form-control mt-1" placeholder="輸入新信箱">
-                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
-                    <button class="btn btn-info" type="submit">更改信箱</button>
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入新信箱">
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-primary" type="submit">更改信箱</button>
                 </div>
             </form>
             <form>
                 <div class="form-group">
                     <label class="d-block">更改暱稱</label>
-                    <input type="text" class="form-control mt-1" placeholder="輸入新暱稱">
-                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
-                    <button class="btn btn-info" type="submit">更改暱稱</button>
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入新暱稱">
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-primary" type="submit">更改暱稱</button>
                 </div>
             </form>
         </div>
@@ -71,10 +71,10 @@
             <form>
                 <div class="form-group">
                     <label class="d-block">更改密碼</label>
-                    <input type="text" class="form-control" placeholder="輸入舊密碼">
-                    <input type="text" class="form-control mt-1" placeholder="輸入新密碼">
-                    <input type="text" class="form-control mt-1" placeholder="請再次輸入新密碼">
-                    <button class="btn btn-info" type="submit">確認更改密碼</button>
+                    <input type="text" class="form-control-sm" placeholder="輸入舊密碼">
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入新密碼">
+                    <input type="text" class="form-control-sm mt-1" placeholder="請再次輸入新密碼">
+                    <button class="btn btn-primary" type="submit">確認更改密碼</button>
                 </div>
             </form>
             <hr>
@@ -83,6 +83,11 @@
                     <label class="d-block">信箱驗證</label>
                     <button class="btn btn-success" type="button">進行信箱驗證</button>
                     <p class="small text-muted mt-2">你還沒驗證信箱!</p>
+                </div>
+                <div class="form-group">
+                    <label class="d-block">二階段驗證</label>
+                    <button class="btn btn-success" type="button">進行二階段驗證</button>
+                    <p class="small text-muted mt-2">你還沒有開啟二階段驗證!</p>
                 </div>
             </form>
         </div>
@@ -95,7 +100,7 @@
                     <input type="checkbox">陌生人
                     <input type="checkbox">男女友/小三
                     <input type="checkbox">你的粉絲...
-                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入密碼">
                     <button class="btn btn-warning" type="submit">確認誰可以給我交友邀請</button>
                 </div>
             </form>
@@ -107,8 +112,16 @@
                 <div class="form-group">
                     <label class="d-block">更改曝光度</label>
                     <input type="checkbox">我要給隔壁老王看
-                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入密碼">
                     <button class="btn btn-danger" type="submit">確認曝光度</button>
+                </div>
+            </form>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">你可以看到誰的作品?</label>
+                    <input type="checkbox" disabled>看到管理員的D槽
+                    <input type="text" class="form-control-sm mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-danger" type="submit">確認隱私</button>
                 </div>
             </form>
         </div>
