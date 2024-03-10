@@ -1,4 +1,5 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/Member/Individual.css">
 <style>
     ul {
         flex-direction: column;
@@ -9,12 +10,13 @@
         right: 10rem;
         width: 75%;
     }
-    button.active{
-        background-color:blue;
+
+    button.active {
+        background-color: blue;
     }
 </style>
 
-<div style="display:flex;flex-direction:row;">
+<div style="display:flex;flex-direction:row;position:relative;">
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#basic" aria-selected="true">基本</button>
@@ -34,6 +36,18 @@
         <div class="tab-pane fade show active" id="basic">
             <h5>基本設定</h5>
             <hr>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">更改頭像</label>
+                    <div>
+                        <img id="Avatar">
+                        <canvas id="Preview" width="256" height="256"></canvas>
+                    </div>
+                    <input type="file" id="ChooseImage" class="form-control mt-1">
+                    <input type="password" class="form-control mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-info" type="submit">更改暱稱</button>
+                </div>
+            </form>
             <form>
                 <div class="form-group">
                     <label class="d-block">更改信箱</label>
@@ -100,3 +114,5 @@
         </div>
     </div>
 </div>
+
+<script src="~/Member/Individual.js"></script>

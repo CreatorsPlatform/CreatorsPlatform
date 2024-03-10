@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Shared/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CreatorsPlatform.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">]
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
 </head>
@@ -77,13 +77,13 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container" style="position:relative;height:max-content;">
         <main role="main" class="pb-5">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="position:absolute;">
         <div class="container py-2 FooterContainer">
             <div class="d-flex">
                 <div class="me-3">
