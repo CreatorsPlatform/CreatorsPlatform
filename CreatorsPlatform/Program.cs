@@ -58,10 +58,9 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 建立名稱default的單一路由
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
+    pattern: "{controller=yhu}/{action=IMAGINK}/{id?}"
     );
 
 app.Run();
