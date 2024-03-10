@@ -12,3 +12,8 @@
 :root {
     scrollbar-width: none;
 }
+
+#Avatar {
+    position: relative;
+    top: -125px;
+}

@@ -4,7 +4,10 @@ window.onload = () => {
     var image = new Image();
     var canvas = document.getElementById('Preview');
     var ctx = canvas.getContext('2d');
-
+    document.querySelector('#changeAvatarBtn').addEventListener('click', () => {
+        var avatar = document.getElementById('Preview').toDataURL('image/png').replace('image/png', 'image/octet-stream');
+        document.getElementById('Avatar').src = avatar;
+    })
     document.querySelector('#ChooseImage').addEventListener('change', () => {
         const [file] = document.querySelector('#ChooseImage').files;
         image.src = URL.createObjectURL(file);
@@ -35,30 +38,23 @@ window.onload = () => {
             }
         });
         canvas.addEventListener('wheel', (e) => {
-            dy = e.deltaY;
-            // x should be equal to x minus xpos in canvas * zoom ratio
-            var xlenpre = xlen;
-            var ylenpre = ylen;
-            xlen -= 0.1 * dy;
-            ylen -= 0.1 * dy;
-            if (xlen < 256 || ylen < 256) {
-                xlen = 256;
-                ylen = 256;
-            }
-            var xpos = getMousePos(canvas, e).x;
-            var ypos = getMousePos(canvas, e).y;
-            // zoom out
-            if (dy > 0) {
-                console.log("zoom out")
-                x += 0.1 * xpos * xlen / xlenpre
-                y += 0.1 * ypos * ylen / ylenpre
-            }
-            // zoom in
-            if (dy < 0) {
-                x -= 0.1 * xpos * xlen / xlenpre
-                y -= 0.1 * ypos * ylen / ylenpre
-            }
-            ctx.drawImage(image, x, y, xlen, ylen);
+            canvas.addEventListener('wheel', (e) => {
+                console.log(x, y, xlen, ylen)
+                dy = e.deltaY;
+                var prexlen = xlen;
+                var preylen = ylen;
+                xlen -= 0.1 * dy;
+                ylen -= 0.1 * dy;
+                if (xlen < 128 || ylen < 128) {
+                    xlen = 128;
+                    ylen = 128;
+                    return;
+                }
+                // pixels that overflow = -x + x + xlen - 128
+                x += (xlen - prexlen) * x / (xlen - 128);
+                y += (ylen - preylen) * y / (ylen - 128);
+                ctx.drawImage(image, x, y, xlen, ylen);
+            });
         });
     }
 }
