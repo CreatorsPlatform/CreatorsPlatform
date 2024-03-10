@@ -3,10 +3,19 @@
     ul {
         flex-direction: column;
     }
+
+    .tab-content {
+        position: absolute;
+        right: 10rem;
+        width: 75%;
+    }
+    button.active{
+        background-color:blue;
+    }
 </style>
 
 <div style="display:flex;flex-direction:row;">
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs">
         <li class="nav-item">
             <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#basic" aria-selected="true">基本</button>
         </li>
@@ -23,86 +32,71 @@
 
     <div class="tab-content">
         <div class="tab-pane fade show active" id="basic">
-            <div class="card">基本</div>
+            <h5>基本設定</h5>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">更改信箱</label>
+                    <input type="text" class="form-control mt-1" placeholder="輸入新信箱">
+                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-info" type="submit">更改信箱</button>
+                </div>
+            </form>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">更改暱稱</label>
+                    <input type="text" class="form-control mt-1" placeholder="輸入新暱稱">
+                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-info" type="submit">更改暱稱</button>
+                </div>
+            </form>
         </div>
         <div class="tab-pane fade" id="security">
-
-            <!--修改電子信箱開始-->
-            <div class="card">
-                <div class="card-body py-5 px-md-5">
-                    <form id="ChangeEmail" method="post" action="Member/ChangeEmail">
-                        <span>
-                            <div class="form-outline mb-4">
-                                <p>新電子信箱</p>
-                                <input type="email" id="Name" class="form-control" name="Email" />
-                                <label class="form-label" for="Name"></label>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <p>密碼</p>
-                                <input type="password" id="Password" class="form-control" name="Password" />
-                                <label class="form-label" for="Password"></label>
-                            </div>
-                        </span>
-                        <button type="submit" class="btn btn-primary btn-block mb-4">
-                            更改電子信箱
-                        </button>
-                    </form>
+            <h5>安全設定</h5>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">更改密碼</label>
+                    <input type="text" class="form-control" placeholder="輸入舊密碼">
+                    <input type="text" class="form-control mt-1" placeholder="輸入新密碼">
+                    <input type="text" class="form-control mt-1" placeholder="請再次輸入新密碼">
+                    <button class="btn btn-info" type="submit">確認更改密碼</button>
                 </div>
-            </div>
-            <!--修改電子信箱結束-->
-            <!--修改暱稱開始-->
-            <div class="card">
-                <div class="card-body py-5 px-md-5">
-                    <form id="ChangeNameForm" method="post" action="Member/ChangeName">
-                        <div class="form-outline mb-4">
-                            <p>新暱稱</p>
-                            <input type="email" id="Name" class="form-control" name="Name" />
-                            <label class="form-label" for="Name"></label>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <p>密碼</p>
-                            <input type="password" id="Password" class="form-control" name="Password" />
-                            <label class="form-label" for="Password"></label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block mb-4">
-                            更改暱稱
-                        </button>
-                    </form>
+            </form>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">信箱驗證</label>
+                    <button class="btn btn-success" type="button">進行信箱驗證</button>
+                    <p class="small text-muted mt-2">你還沒驗證信箱!</p>
                 </div>
-            </div>
-            <!--修改暱稱結束-->
-            <!--修改密碼開始-->
-            <div class="card">
-                <div class="card-body py-5 px-md-5">
-                    <form id="ChangePasswordForm" method="post" action="Member/ChangePassword">
-                        <div class="form-outline mb-4">
-                            <p>請輸入舊密碼</p>
-                            <input type="email" id="OldPassword" class="form-control" name="OldPassword" />
-                            <label class="form-label" for="OldPassword"></label>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <p>新密碼</p>
-                            <input type="password" id="NewPassword" class="form-control" name="NewPassword" />
-                            <label class="form-label" for="NewPassword"></label>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <p>確認新密碼</p>
-                            <input type="password" id="ReNewPassword" class="form-control" name="ReNewPassword" />
-                            <label class="form-label" for="ReNewPassword"></label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block mb-4">
-                            更改密碼
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <!--修改密碼結束-->
+            </form>
         </div>
         <div class="tab-pane fade" id="social">
-            社交
+            <h5>社交設定</h5>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">誰可以給你發交友邀請?</label>
+                    <input type="checkbox">陌生人
+                    <input type="checkbox">男女友/小三
+                    <input type="checkbox">你的粉絲...
+                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-warning" type="submit">確認誰可以給我交友邀請</button>
+                </div>
+            </form>
         </div>
         <div class="tab-pane fade" id="privacy">
-            隱私
+            <h5>隱私設定</h5>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label class="d-block">更改曝光度</label>
+                    <input type="checkbox">我要給隔壁老王看
+                    <input type="text" class="form-control mt-1" placeholder="輸入密碼">
+                    <button class="btn btn-danger" type="submit">確認曝光度</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
