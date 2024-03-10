@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imagink</title>
@@ -43,7 +43,7 @@
                     <ul class="navbar-nav NavSection">
                         <li class="nav-item" id="MemberSection">
                             @* 如果登入 *@
-                             @if (1 == 2)
+                            @if (1 == 2)
                             {
                                 <a href="#" class="MemberDropdown">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -60,17 +60,48 @@
                             @* 如果未登入 *@
                             else
                             {
-                            <a href="#" class="MemberDropdown">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                                </svg>
-                            </a>
-                             <ul class="MemberDropdownList">
+                                <a href="#" class="MemberDropdown">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                    </svg>
+                                </a>
+                                <ul class="MemberDropdownList">
                                     <li><a asp-action="Login" asp-controller="Member" class="p-1">登入</a><a asp-action="Signup" asp-controller="Member">註冊</a></li>
-                            </ul>
+                                </ul>
                             }
                         </li>
+                        <!--方便通道開始-->
+                        <h3>以下是方便傳送道 開發完畢後請刪除</h3>
+                        <div>
+                            <p>組長做的頁面:</p>
+                            <a asp-action="IMAGINK" asp-controller="yhu" class="link-success">IMAGINK</a>
+                            <a asp-action="PersonalUser" asp-controller="yhu" class="link-success">Personal user</a>
+                        </div>
+                        <div>
+                            <p>資料庫大師做的頁面:</p>
+                            <a asp-action="EX2_1" asp-controller="HotGuy" class="link-success">活動頁</a>
+                        </div>
+                        <div>
+                            <p>漫畫王做的頁面?:</p>
+                            <a asp-action="Index" asp-controller="Event" class="link-success">活動</a>
+                            <a asp-action="EventContent" asp-controller="Event" class="link-success">活動內容</a>
+                        </div>
+                        <div>
+                            <p>波溜做的頁面:</p>
+                            <a asp-action="Index" asp-controller="Creator" class="link-success">1</a>
+                            <a asp-action="Index" asp-controller="Creator" class="link-success">2</a>
+                            <a asp-action="AddPost" asp-controller="Creator" class="link-success">3</a>
+                            <a asp-action="AddCommisionForm" asp-controller="Creator" class="link-success">4</a>
+                            <a asp-action="EditSubcriptionPlans" asp-controller="Creator" class="link-success">5</a>
+                        </div>
+                        <div>
+                            <p>會員頁面:</p>
+                            <a asp-action="Login" asp-controller="Member" class="link-success">登入</a>
+                            <a asp-action="Signup" asp-controller="Member" class="link-success">註冊</a>
+                            <a asp-action="Individual" asp-controller="Member" class="link-success">個人設定</a>
+                        </div>
+                        <!--方便通道結束 不用洩了-->
                     </ul>
                 </div>
             </div>

@@ -35,7 +35,7 @@ ol {
     list-style-type: none;
 }
 
-#NewMesg {
+.HighlightMesg {
     background-color: rgb(255, 255, 255);
     z-index: 2;
     position: relative;

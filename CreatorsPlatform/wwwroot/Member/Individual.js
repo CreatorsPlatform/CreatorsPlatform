@@ -31,30 +31,38 @@ window.onload = () => {
         });
         canvas.addEventListener('mousemove', ({ movementX, movementY }) => {
             if (isDragging) {
-                console.log(x, y, xlen, ylen);
+                if (x + movementX > 0 || y + movementY > 0 || x + xlen + movementX < 256 || y + ylen + movementY < 256) {
+                    return;
+                }
                 x += movementX;
                 y += movementY;
                 ctx.drawImage(image, x, y, xlen, ylen);
             }
         });
+        canvas.addEventListener('mouseleave', () => {
+            document.body.style.overflow = "auto";
+        });
         canvas.addEventListener('wheel', (e) => {
-            canvas.addEventListener('wheel', (e) => {
-                console.log(x, y, xlen, ylen)
-                dy = e.deltaY;
-                var prexlen = xlen;
-                var preylen = ylen;
-                xlen -= 0.1 * dy;
-                ylen -= 0.1 * dy;
-                if (xlen < 128 || ylen < 128) {
-                    xlen = 128;
-                    ylen = 128;
-                    return;
-                }
-                // pixels that overflow = -x + x + xlen - 128
-                x += (xlen - prexlen) * x / (xlen - 128);
-                y += (ylen - preylen) * y / (ylen - 128);
-                ctx.drawImage(image, x, y, xlen, ylen);
-            });
+            document.body.style.overflow = "hidden";
+            console.log(x, y, xlen, ylen)
+            dy = e.deltaY;
+            var prexlen = xlen;
+            var preylen = ylen;
+            xlen -=  dy;
+            ylen -=  dy;
+            var xpos = getMousePos(canvas, e).x;
+            var ypos = getMousePos(canvas, e).y;
+            if (xlen < 256 || ylen < 256) {
+                xlen = 256;
+                ylen = 256;
+                return;
+            }
+            if (xpos - (xpos - x) * xlen / prexlen > 0 || ypos - (ypos - y) * ylen / preylen > 0 || xpos - (xpos - x) * xlen / prexlen + xlen < 256 || ypos - (ypos - y) * ylen / preylen + ylen < 256) {
+                return;
+            }
+            x = xpos - (xpos - x) * xlen / prexlen;
+            y = ypos - (ypos - y) * ylen / preylen;
+            ctx.drawImage(image, x, y, xlen, ylen);
         });
     }
 }

@@ -8,18 +8,16 @@ using CreatorsPlatform.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 #region
-//////////依賴注入開始
+
 builder.Services.AddScoped < MemberDatabase, MemberDatabase > ();
 builder.Services.AddHttpContextAccessor();
-// 註冊DbContext
+
 builder.Services.AddDbContext<ImaginkDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("CSLocalDB")
     ));
 
-// 註冊MVC服務
 builder.Services.AddControllersWithViews();
 
-// 註冊Session服務
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(60);
@@ -28,13 +26,10 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-
-//////////依賴注入結束
 #endregion
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -42,26 +37,18 @@ if (!app.Environment.IsDevelopment())
 }
 
 
-
-
-
-// 使用靜態資源中間件
 app.UseStaticFiles();
 
-// 使用Session中間件
 app.UseSession();
 
-// 使用路由中間件
 app.UseRouting();
 
-// 使用授權中間件
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 建立名稱default的單一路由
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
+    pattern: "{controller=yhu}/{action=IMAGINK}/{id?}"
     );
 
 app.Run();
