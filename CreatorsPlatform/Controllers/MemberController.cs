@@ -50,6 +50,11 @@ namespace CreatorsPlatform.Controllers
             return View("頁面正在跳轉");
             return View("Login");
         }
+        [HttpGet]
+        public IActionResult Login2(string UserName)
+        {
+            return View("Login");
+        }
 
         [HttpPost]
         public ActionResult Signup(string Email, string Password)
