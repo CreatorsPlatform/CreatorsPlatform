@@ -80,7 +80,10 @@ namespace CreatorsPlatform.Controllers
 		{
 			return View();
 		}
-		
+		public IActionResult EntrustPayment()
+		{
+			return View();
+		}
 	}
     
 
