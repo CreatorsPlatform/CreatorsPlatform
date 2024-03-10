@@ -9,13 +9,11 @@
 	  rel="stylesheet" /> *@
 
 <link href="~/css/Event/EventContent/EventContent.css" rel="stylesheet" />
-@* _Layout有宣告了，但是沒這行會出現$ undefine 姑且先加上 *@
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 @* 活動圖片 *@
-<div class="container-fluid EventHeaderImg"><img class="img-fluid" src="~/img/Event/EventContent/PekoraImg.jpg" alt="Alternate Text" /></div>
+<div class="container-fluid px-0 EventHeaderImg"><img class="img-fluid" src="~/img/Event/EventContent/PekoraImg.jpg" alt="Alternate Text" /></div>
 @* 說明欄 *@
-<div class="container-fluid">
+<div class="container-fluid EventIntroSection">
     <div class="row d-flex align-items-center pt-4">
         @* 主辦 *@
         <div class="col-3 d-flex align-items-center">
@@ -113,13 +111,13 @@
         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
     </svg>
 </button>
-
+<!-- 投稿對話盒 -->
 <div id="QuickPostModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header d-flex align-items-center justify-content-between">
                 <h5 class="mb-0"><b>活動投稿</b></h5>
-                <button type="button" class="btn btn-close CloseBtn" data-dismiss="modal"></button>
+                <button type="button" class="btn btn-close CloseBtn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="/somewhere/to/upload" enctype="multipart/form-data">
@@ -157,7 +155,7 @@
                     <button type="button"
                             id="cancelButton"
                             class="btn btn-outline-secondary"
-                            data-dismiss="modal">
+                            data-bs-dismiss="modal" aria-label="Close">
                         取消
                     </button>
                 </div>
@@ -165,7 +163,7 @@
         </div>
     </div>
 </div>
-<!-- /對話盒 -->
+
 <script src="~/js/Event/EventContent.js"></script>
 
 <!-- 編輯器的套件 -->

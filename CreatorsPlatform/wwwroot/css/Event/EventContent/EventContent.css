@@ -10,6 +10,10 @@
         object-position: center -8rem;
     }
 
+/*說明欄*/
+.EventIntroSection {
+    background-color: rgb(217 244 246);
+}
 /*中型參加者頭像*/
 .MidSizeHeadShot {
     width: 40px;
@@ -78,12 +82,12 @@
 }
 /*叉叉按鈕*/
 .CloseBtn:focus, .CloseBtn:active:focus {
-    box-shadow: none
+    box-shadow: none;
 }
 
 
 #okButton:focus, #cancelButton:focus {
-    box-shadow: none
+    box-shadow: none;
 }
 
 #okButton {
