@@ -1,0 +1,38 @@
+﻿/*填寫部分的每行間距*/
+.CommisionSetUpSection > div{
+    margin-bottom: 1rem;
+}
+/*填寫部分的label*/
+.CommisionSetUpSection .input-group label {
+    margin-right: 2rem;
+}
+
+/*委託描述區塊*/
+.CommisionEditor{
+    position:relative;
+}
+#editor{
+    height:inherit;
+}
+
+/*設定費用區塊*/
+.CommisionChargeSet {
+}
+/*下一步按鈕*/
+.NextBtn {
+    background-color: #53b1ff;
+    color: white;
+    width: 100%;
+}
+
+/*上傳圖片預覽部分*/
+/*沒連結圖片時不要顯示*/
+#preview_progressbarTW_img[src="#"] {
+    display: none;
+}
+/*上傳圖片預覽不要過大*/
+#preview_progressbarTW_img {
+    width: 15rem;
+    height: 15rem;
+    object-fit:contain;
+}
