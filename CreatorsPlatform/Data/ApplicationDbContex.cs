@@ -19,10 +19,6 @@ namespace CreatorsPlatform.Data
         public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(ConnectionString);
-        }
     }
 
 }
