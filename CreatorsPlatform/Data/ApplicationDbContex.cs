@@ -6,10 +6,8 @@ namespace CreatorsPlatform.Data
 {
     public class ImaginkDbContext : DbContext
     {
-        private readonly string ConnectionString;
-        public ImaginkDbContext(DbContextOptions<ImaginkDbContext> options, IConfiguration configuration) : base(options)
+        public ImaginkDbContext(DbContextOptions<ImaginkDbContext> options) : base(options)
         {
-            ConnectionString = configuration.GetConnectionString("ConnectionString");
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Commission> Commissions { get; set; }
