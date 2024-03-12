@@ -9,7 +9,6 @@ using CreatorsPlatform.Controllers;
 var builder = WebApplication.CreateBuilder(args);
 #region
 
-builder.Services.AddScoped < MemberDatabase, MemberDatabase > ();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<ImaginkDbContext>(options => options.UseSqlServer(
