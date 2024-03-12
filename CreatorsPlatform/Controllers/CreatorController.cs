@@ -16,6 +16,12 @@ namespace CreatorsPlatform.Controllers
 
             return View();
         }
+        
+        // 創作者貼文頁面
+        public IActionResult GetPost()
+        {
+            return View();
+        }
 
         // 創作者建立接受委託表單(修改位置待訂)
         public IActionResult AddCommisionForm()
