@@ -11,8 +11,9 @@
 .CommisionEditor{
     position:relative;
 }
-#editor{
-    height:inherit;
+#editor {
+    /*height:inherit;*/
+    height: 500px;
 }
 
 /*設定費用區塊*/
