@@ -1,10 +1,17 @@
 ﻿
-
+::-webkit-scrollbar {
+    display: none;
+}
 #Toggle {
     word-wrap: break-word;
 }
 #Main {
-   
+    flex: 0 0 auto;
+    width: 56%;
+}
+#Userlist {
+    height: 50vh;
+    overflow-y: scroll;
 }
 #Sidebar {
 }
