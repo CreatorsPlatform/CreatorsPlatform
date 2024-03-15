@@ -1,12 +1,11 @@
 ﻿@{
     ViewData["Title"] = "AddCommisionForm";
 }
+<link rel="stylesheet" href="/css/Shared/Quill.css" />
 <link href="~/css/Creator/AddCommisionForm.css" rel="stylesheet" />
 
 <h2>刊登委託</h2>
-<ul>
-    <li></li>
-</ul>
+
 <div class="row">
     <div class="col-12">
         <div class="CommisionSetUpSection">
@@ -17,7 +16,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="">
-                        <label>類別</label><br />
+                        <label>類別</label>
                         <select class="form-select">
                             <option>繪圖</option>
                             <option>影片</option>
@@ -42,21 +41,6 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <div class="">
-                        <label>年齡限制</label>
-                        <form class="d-flex">
-                            <div class="me-3">
-                                <input type="radio" id="AllAgesRadio" name="AgeLimit" value="male">
-                                <label for="AllAgesRadio">全年齡向</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="ForAdultRadio" name="AgeLimit" value="female">
-                                <label for="ForAdultRadio">成人向</label>
-                            </div>                                                      
-                        </form>
-                    </div>
-                </div>
-                <div class="col-6">
                     <div class="">                     
                             <label>總名額限制</label>
                         <input class="form-control" type="text" name="CommisionRequstLimit" value="" />
@@ -70,9 +54,9 @@
                             <label class="text-nowrap">開放期限</label>
                             <input class="form-control" type="date" name="AcceptCommisionUntil" value="" />
                         </div>                    
-                        <div>
+                        <div class="d-flex pt-2">
                             <input type="checkbox" name="AcceptCommisionUntil" value="" />
-                            <label>不限期</label>
+                            <label class="ms-1">不限期</label>
                         </div>
                         
                     </div>
@@ -110,7 +94,7 @@
             </div>
             <div class="row">
                 <div class="col-12 CommisionEditor">
-                    <label>委託描述</label>
+                    <label>委託說明</label>
                     <!-- Create the editor container -->
                     <div id="editor">
                     </div>
@@ -143,4 +127,8 @@
         </div>
     </div>
 </div>
+<!-- Copy -->
+
 <script src="~/js/Creator/AddCommisionForm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
+<script src="/js/Shared/Quill.js"></script>

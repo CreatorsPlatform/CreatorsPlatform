@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Diagnostics;
 using System.Reflection;
+using System.Text.Json;
 
 namespace CreatorsPlatform.Controllers
 {
@@ -44,45 +45,15 @@ namespace CreatorsPlatform.Controllers
         }
 
         [HttpPost]
-        public ActionResult Signup(string Email, string Password)
+        public JsonResult Signup([FromBody] JsonElement json)
         {
-            return RedirectToAction("Index");
+            throw new NotImplementedException();
         }
 
         [HttpPost]
-        public ActionResult Login(string Email, string Password)
+        public JsonResult Login([FromBody] JsonElement json)
         {
-            return RedirectToRoute("default");
-        }
-        [HttpPut]
-        public void 更新暱稱(int UserId, string UserName)
-        {
-            return;
-        }
-        [HttpPut]
-        public void 輸入密碼確認身分(int UserId, string Password)
-        {
-            return;
-        }
-        [HttpPut]
-        public void 更新密碼(int UserId, string Password)
-        {
-
-        }
-        [HttpPut]
-        public void 更新電子信箱(int UserId, string Email)
-        {
-
-        }
-        [HttpPost]
-        public void 信箱驗證(int UserId)
-        {
-
-        }
-        [HttpPut]
-        public void 批量會員資訊更新(int UserId)
-        {
-
+            throw new NotImplementedException();
         }
     }
 }
